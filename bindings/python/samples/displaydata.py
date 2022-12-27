@@ -42,18 +42,18 @@ class RunDisplay(SampleBase):
                 # 열화상 데이터 호출
                 TIC_API.getInstance().SetFilePath("/home/icns/Desktop/TIC_Soft/")
                 TmperatureList_10x10 = TIC_API.getInstance().GetTemperatureList(PixelType.TenByTen.value, "TIC_Data")
-                GetDetectFireList = TIC_API.getInstance().GetAllJsonData("DetectFireList") # Get DetetctFireList Data. return 2 Dimensional Array
+                ConfigData = TIC_API.getInstance().GetConfigData("config") # Get DetetctFireList Data. return 2 Dimensional Array
+
 
  #               for i in len(GetDetectFireList["DetectFireList"]):
  #                   print(GetDetectFireList["DetectFireList"][i][0] , GetDetectFireList["DetectFireList"][i][1])
 
-                datas = GetDetectFireList["DetectFireList"]
-                #currunt_temp1 = str(round(TmperatureList_10x10[0][0])) # 1번 화구
-                #currunt_temp2 = str(round(TmperatureList_10x10[0][1])) # 2번 화구
-                #currunt_temp3 = str(round(TmperatureList_10x10[0][2])) # 3번 화구
-                currunt_temp1 = str(112) # 1번 화구
-                currunt_temp2 = str(108) # 2번 화구
-                currunt_temp3 = str(117) # 3번 화구
+                currunt_temp1 = str(round(TmperatureList_10x10[ConfigData[0][0]][ConfigData[0][1]])) # 1번 화구
+                currunt_temp2 = str(round(TmperatureList_10x10[ConfigData[1][0]][ConfigData[1][1]])) # 2번 화구
+                currunt_temp3 = str(round(TmperatureList_10x10[ConfigData[2][0]][ConfigData[2][1]])) # 3번 화구
+                #currunt_temp1 = str(112) # 1번 화구 테스트 코드
+                #currunt_temp2 = str(108) # 2번 화구 테스트 코드
+                #currunt_temp3 = str(117) # 3번 화구 테스트 코드
                 
             
                 # display1 = f'{currunt_temp1}'
