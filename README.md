@@ -6,10 +6,16 @@
 git clone https://github.com/icns-distributed-cloud/LED_Display.git
 ```
 
+### Build
+```
+make build-python PYTHON=$(which python 3) 
+```
+
 ### Package Install
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
+sudo make install-python 
 ```
 
 ### Action
